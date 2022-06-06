@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Artist;
 use App\Models\User;
 use App\Models\Venue;
 use Illuminate\Database\Seeder;
@@ -24,5 +25,8 @@ class DatabaseSeeder extends Seeder
 
         // Seed venues
         Venue::factory(6)->create();
+
+        // Seed artists
+        Artist::factory(6)->create();
     }
 }
