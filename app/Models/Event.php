@@ -12,8 +12,16 @@ class Event extends Model
     /**
      * Get the venue that the event takes place at.
      */
-    public function post()
+    public function venue()
     {
         return $this->belongsTo(Venue::class);
+    }
+
+    /**
+     * Get the deals that this event has.
+     */
+    public function deals()
+    {
+        return $this->hasMany(Deal::class);
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Venue::class)->constrained()->onDelete('cascade');;
+            $table->foreignIdFor(Venue::class)->constrained()->restrictOnDelete();
             $table->string('name');
             $table->string('image');
             $table->enum('category', ['Concerts', 'Plays', 'Exhibitions', 'Festivals', 'Movies', 'Culinary', 'Conferences', 'Sports events', 'Other']);

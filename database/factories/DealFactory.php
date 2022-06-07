@@ -17,7 +17,13 @@ class DealFactory extends Factory
     public function definition()
     {
         return [
-            // TODO: seed deals when realtionships are setup
+            'name' => 'Basic entry',
+            'stock' => $this->faker->randomNumber(4, false),
+            'price' => $this->faker->randomFloat(
+                2,      // decimal places
+                0,      // range min
+                2000    // range max
+            ),
         ];
     }
 }
