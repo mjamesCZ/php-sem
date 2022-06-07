@@ -24,4 +24,12 @@ class Event extends Model
     {
         return $this->hasMany(Deal::class);
     }
+
+    /**
+     * The artists performing at this event.
+     */
+    public function artists()
+    {
+        return $this->belongsToMany(Artist::class);
+    }
 }
