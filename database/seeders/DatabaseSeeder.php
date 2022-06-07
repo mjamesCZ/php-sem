@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Artist;
 use App\Models\Deal;
 use App\Models\Event;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Venue;
 use Illuminate\Database\Seeder;
@@ -18,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
+        $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
@@ -36,8 +37,14 @@ class DatabaseSeeder extends Seeder
             ]);
 
             // Seed deals
-            Deal::factory()->create([
+            $deal = Deal::factory()->create([
                 'event_id' => $event->id
+            ]);
+
+            // Seed tickets
+            DB::table('tickets')->insert([
+                'deal_id' => $deal->id,
+                'user_id' => $user->id,
             ]);
         }
     }

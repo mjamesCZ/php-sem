@@ -16,4 +16,12 @@ class Deal extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    /**
+     * Get the tickets for this deal.
+     */
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }
