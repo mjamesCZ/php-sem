@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed venues
-        $venues = Venue::factory(12)->create();
+        $venues = Venue::factory(14)->create();
 
         // Seed artists
-        Artist::factory(6)->create();
+        Artist::factory(8)->create();
 
         // Seed events
         foreach ($venues as $venue) {

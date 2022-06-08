@@ -18,7 +18,7 @@ class VenueFactory extends Factory
     {
         return [
             'name' => $this->faker->company(),
-            'image' => $this->faker->imageUrl(640, 480, 'venue'),
+            'image' => $this->faker->randomElement(['https://goout.net/i/034/343405-383.jpg', 'https://goout.net/i/039/394358-383.jpg', 'https://goout.net/i/086/864564-383.jpg']),
             'category' => $this->faker->randomElement(['Cinemas', 'Clubs', 'Theatres', 'Galleries', 'Museums', 'Arenas', 'Conference centres', 'Sports venues', 'Outdoors']),
             'address' => $this->faker->streetName() . ' ' . $this->faker->buildingNumber() . ', ' . $this->faker->city(),
             'website' => $this->faker->domainName(),

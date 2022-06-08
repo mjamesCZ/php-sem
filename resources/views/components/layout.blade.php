@@ -60,7 +60,8 @@
   </aside>
 
   <div class="flex-1">
-    <header class="sticky top-0 bg-gradient-to-l from-gray-100 to-white text-right">
+    <header
+      class="sticky top-0 border-b border-slate-50 bg-gradient-to-l from-gray-100/90 to-white/90 text-right backdrop-blur-lg">
       @auth
       AUTH
       @else

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\VenueController;
 use Illuminate\Support\Facades\Route;
@@ -32,5 +33,14 @@ Route::get('/events', [EventController::class, 'index'])->name('events');
 | Venue listings
 |--------------------------------------------------------------------------
 */
+
 // Show all listings
 Route::get('/venues', [VenueController::class, 'index'])->name('venues');
+
+/*
+| Artist listings
+|--------------------------------------------------------------------------
+*/
+
+// Show all listings
+Route::get('/artists', [ArtistController::class, 'index'])->name('artists');

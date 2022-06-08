@@ -1,7 +1,12 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./resources/**/*.blade.php"],
+  content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+    "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+  ],
   theme: {
     container: {
       center: true,
@@ -9,7 +14,7 @@ module.exports = {
         DEFAULT: "1rem",
         sm: "2rem",
         lg: "4rem",
-        xl: "7rem",
+        xl: "6rem",
         "2xl": "8rem",
       },
     },
