@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\VenueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,15 @@ Route::get('/', function () {
 
 /*
 | Event listings
+|--------------------------------------------------------------------------
 */
 
 // Show all listings
 Route::get('/events', [EventController::class, 'index'])->name('events');
+
+/*
+| Venue listings
+|--------------------------------------------------------------------------
+*/
+// Show all listings
+Route::get('/venues', [VenueController::class, 'index'])->name('venues');

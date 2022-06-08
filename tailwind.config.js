@@ -9,8 +9,8 @@ module.exports = {
         DEFAULT: "1rem",
         sm: "2rem",
         lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
+        xl: "7rem",
+        "2xl": "8rem",
       },
     },
     extend: {
@@ -47,6 +47,7 @@ module.exports = {
       },
       boxShadow: {
         outline: "0 0 0 5px hsl(0deg 0% 0% / 2%)",
+        card: "-1px 2px 10px 0px #0000000F",
       },
     },
   },

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    // Show all listings
+    // Show events listing
     public function index()
     {
         return view('events.index', [

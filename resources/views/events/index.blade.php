@@ -1,6 +1,6 @@
 <x-layout>
   <div class="container">
-    <h2 class="text-4xl pt-10 pb-8">Events</h2>
+    <h2 class="text-4xl pt-12 pb-8">Events</h2>
 
     <div class="grid grid-cols-3 gap-4">
 
