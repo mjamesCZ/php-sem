@@ -28,14 +28,6 @@
       </div>
     </section>
 
-    <section class="py-6">
-      <h3 class="text-2xl pb-3">Venue</h3>
-
-      <div class="grid grid-cols-2 gap-x-8 gap-y-10">
-        <x-venue-card :venue="$event->venue" />
-      </div>
-    </section>
-
     <section class="py-6 pb-3">
       <h3 class="text-2xl">Tickets</h3>
       <p>tixx</p>

@@ -37,13 +37,19 @@ Route::get('/events/{event}', [EventController::class, 'show']);
 |--------------------------------------------------------------------------
 */
 
-// Show all listings
+// Show all venues
 Route::get('/venues', [VenueController::class, 'index'])->name('venues');
+
+// Show single venue
+Route::get('/venues/{venue}', [VenueController::class, 'show']);
 
 /*
 | Artist listings
 |--------------------------------------------------------------------------
 */
 
-// Show all listings
+// Show all artists
 Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
+
+// Show single artist
+Route::get('/artists/{artist}', [ArtistController::class, 'show']);
