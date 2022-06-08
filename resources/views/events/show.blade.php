@@ -16,6 +16,7 @@
       <p class="font-light text-slate-600">{{$event->description}}</p>
     </section>
 
+    @unless($event->artists->count() == 0)
     <section class="py-6">
       <h3 class="text-2xl pb-3">Performing artists</h3>
 
@@ -27,6 +28,7 @@
 
       </div>
     </section>
+    @endunless
 
     <section class="py-6">
       <h3 class="text-2xl pb-3">Venue</h3>

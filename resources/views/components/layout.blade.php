@@ -16,12 +16,15 @@
   {{-- Styles --}}
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 
+  {{-- Scripts --}}
+  <script src="//unpkg.com/alpinejs" defer></script>
+
   <title>Skybox | Front row tickets to your favourite events</title>
 </head>
 
 <body class="flex text-slate-800">
   <aside class="w-1/5 h-screen sticky top-0 pt-14 xl:pt-20 pl-20 pr-28 bg-gradient-to-b from-gray-100 to-white">
-    <h1>
+    <h1 class="w-40">
       <a class="p-1" href="/">
         <img src="{{asset('images/logo.svg')}}" alt="Skybox" />
       </a>
@@ -63,7 +66,18 @@
     <header
       class="sticky top-0 border-b z-20 border-slate-50 bg-gradient-to-l from-gray-100/90 to-white/90 text-right backdrop-blur-lg">
       @auth
-      AUTH
+      <div class="py-3 inline-flex items-center gap-2">
+        <a href="/tickets">
+          <x-ri-coupon-3-line class="w-5 text-gray-600 hover:text-dodger-blue" />
+        </a>
+
+        <form class="inline" method="POST" action="/logout">
+          @csrf
+          <button class="px-6 mr-2 text-slate-600 hover:text-dodger-blue transition-colors" type="submit">
+            Logout
+          </button>
+        </form>
+      </div>
       @else
       <div class="py-3">
         <a class="px-6 py-2 mr-2 text-slate-600 hover:text-dodger-blue transition-colors" href="/login">Log in</a>
@@ -76,9 +90,7 @@
     </main>
   </div>
 
-  <footer>
-
-  </footer>
+  <x-alert />
 
 </body>
 

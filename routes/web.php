@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\OAuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VenueController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +55,27 @@ Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
 
 // Show single artist
 Route::get('/artists/{artist}', [ArtistController::class, 'show']);
+
+/*
+| Auth routes
+|--------------------------------------------------------------------------
+*/
+
+// Show register form
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+
+// Create user account
+Route::post('/users', [UserController::class, 'store']);
+
+// Show login form
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+// Log user in
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Log user out
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+/// GitHub OAuth routes */
+Route::get('/auth/redirect', [OAuthController::class, 'handleRedirect']);
+Route::get('/auth/callback', [OAuthController::class, 'handleCallback']);
