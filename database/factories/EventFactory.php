@@ -18,7 +18,7 @@ class EventFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(3),
-            'image' => $this->faker->imageUrl(640, 480, 'event'),
+            'image' => $this->faker->randomElement(['https://goout.net/i/093/931255-800.jpg', 'https://goout.net/i/110/1102679-800.jpg', 'https://goout.net/i/109/1098342-800.jpg']),
             'category' => $this->faker->randomElement(['Concerts', 'Plays', 'Exhibitions', 'Festivals', 'Movies', 'Culinary', 'Conferences', 'Sports events', 'Other']),
             'time' => $this->faker->dateTimeThisDecade('+2 years'),
             'description' => $this->faker->paragraph(5),

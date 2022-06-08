@@ -1,13 +1,13 @@
 <x-layout>
   <div class="container">
-    <h2 class="text-4xl pt-12 pb-8">Events</h2>
+    <h2 class="text-4xl pt-14 pb-8">Events</h2>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-3 gap-x-8 gap-y-10">
 
       @unless(count($events) == 0)
 
       @foreach($events as $event)
-      {{$event->name}}
+      <x-event-card :event="$event" />
       @endforeach
 
       @else
@@ -16,7 +16,7 @@
 
     </div>
 
-    <div class="mt-6 p-4">
+    <div class="mt-6 mb-4 p-4">
       {{$events->links()}}
     </div>
   </div>
