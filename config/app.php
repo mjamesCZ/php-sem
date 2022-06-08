@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://localhost'),
+    'url' => env('APP_URL', 'http://php.test'),
 
     'asset_url' => env('ASSET_URL'),
 
