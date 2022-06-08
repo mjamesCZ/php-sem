@@ -19,7 +19,7 @@
   <title>Skybox | Front row tickets to your favourite events</title>
 </head>
 
-<body class="flex">
+<body class="flex text-slate-800">
   <aside class="h-screen sticky top-0 pt-14 xl:pt-20 pl-20 pr-28 bg-gradient-to-b from-gray-100 to-white">
     <h1>
       <a class="p-1" href="/">
@@ -27,29 +27,28 @@
       </a>
     </h1>
 
-    <ul class="text-xl text-slate-800 my-10 leading-loose">
-      <li class="p-1 mb-2">
-        <a class="hover:text-dodger-blue transition-colors block {{ Route::currentRouteName( '/' ) ?  'text-dodger-blue' : '' }}"
-          href="/">Home</a>
-      </li>
+    <ul class="text-xl my-10 leading-loose">
+      <x-navigation-link url="/" route-name="home">
+        Home
+      </x-navigation-link>
 
-      <li class="p-1 mb-2">
-        <a class="hover:text-dodger-blue transition-colors block" href="/events">Events</a>
-      </li>
+      <x-navigation-link url="/events" route-name="events">
+        Events
+      </x-navigation-link>
 
-      <li class="p-1 mb-2">
-        <a class="hover:text-dodger-blue transition-colors block" href="/venues">Venues</a>
-      </li>
+      <x-navigation-link url="/venues" route-name="venues">
+        Venues
+      </x-navigation-link>
 
-      <li class="p-1 mb-2">
-        <a class="hover:text-dodger-blue transition-colors block" href="/artists">Artists</a>
-      </li>
+      <x-navigation-link url="/artists" route-name="artists">
+        Artists
+      </x-navigation-link>
     </ul>
 
     <ul class="text-slate-600 my-10 leading-relaxed">
-      <li class="p-1 mb-2">
-        <a class="hover:text-dodger-blue transition-colors block" href="/about">About</a>
-      </li>
+      <x-navigation-link url="/about" route-name="about">
+        About
+      </x-navigation-link>
 
       <li class="p-1 mb-2">
         <a class="hover:text-dodger-blue transition-colors block" href="https://nofluffjobs.com/cz/laravel"

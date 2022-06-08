@@ -2,7 +2,7 @@
   <div class="container mt-24">
     <img class="mr-4 w-3/4 xl:w-2/3" src="{{asset('images/tagline.svg')}}"
       alt="Always get the front row tickets to your favourite events.">
-    <h2 class="text-2xl mt-6 text-slate-800">With Skybox, your cultural guide</h2>
+    <h2 class="text-2xl mt-6">With Skybox, your cultural guide</h2>
 
     <p class="text-xl mt-12 text-dodger-blue hover:text-dodger-blue-400 transition-colors">
       <a class="inline-flex" href="/register">Create an account to get started

@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 // Show homepage
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 /*
 | Event listings
 */
 
 // Show all listings
-Route::get('/events', [EventController::class, 'index']);
+Route::get('/events', [EventController::class, 'index'])->name('events');

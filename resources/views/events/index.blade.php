@@ -1,19 +1,23 @@
 <x-layout>
-  <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+  <div class="container">
+    <h2 class="text-4xl pt-10 pb-8">Events</h2>
 
-    @unless(count($events) == 0)
+    <div class="grid grid-cols-3 gap-4">
 
-    @foreach($events as $event)
-    TEST
-    @endforeach
+      @unless(count($events) == 0)
 
-    @else
-    <p>No listings found</p>
-    @endunless
+      @foreach($events as $event)
+      {{$event->name}}
+      @endforeach
 
-  </div>
+      @else
+      <p>No listings found</p>
+      @endunless
 
-  <div class="mt-6 p-4">
-    {{$events->links()}}
+    </div>
+
+    <div class="mt-6 p-4">
+      {{$events->links()}}
+    </div>
   </div>
 </x-layout>
