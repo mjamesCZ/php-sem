@@ -11,7 +11,7 @@ class VenueController extends Controller
     public function index()
     {
         return view('venues.index', [
-            'venues' => Venue::latest()->paginate(12)
+            'venues' => Venue::latest()->filter(request(['category']))->paginate(12)
         ]);
     }
 }

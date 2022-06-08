@@ -16,4 +16,14 @@ class Venue extends Model
     {
         return $this->hasMany(Event::class);
     }
+
+    /**
+     * Filter venues by category.
+     */
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['category'] ?? false) {
+            $query->where('category', 'like', '%' . request('category') . '%');
+        }
+    }
 }

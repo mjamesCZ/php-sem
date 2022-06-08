@@ -23,7 +23,7 @@
   <aside class="h-screen sticky top-0 pt-14 xl:pt-20 pl-20 pr-28 bg-gradient-to-b from-gray-100 to-white">
     <h1>
       <a class="p-1" href="/">
-        <img class="inline" src="{{asset('images/logo.svg')}}" alt="Skybox" />
+        <img src="{{asset('images/logo.svg')}}" alt="Skybox" />
       </a>
     </h1>
 
