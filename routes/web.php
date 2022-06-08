@@ -26,8 +26,11 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 
-// Show all listings
+// Show all events
 Route::get('/events', [EventController::class, 'index'])->name('events');
+
+// Show single event
+Route::get('/events/{event}', [EventController::class, 'show']);
 
 /*
 | Venue listings

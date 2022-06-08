@@ -14,4 +14,12 @@ class EventController extends Controller
             'events' => Event::latest()->filter(request(['category']))->paginate(12)
         ]);
     }
+
+    // Show single listing
+    public function show(Event $event)
+    {
+        return view('events.show', [
+            'event' => $event
+        ]);
+    }
 }
