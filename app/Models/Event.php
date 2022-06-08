@@ -32,4 +32,14 @@ class Event extends Model
     {
         return $this->belongsToMany(Artist::class);
     }
+
+    /**
+     * Filter events by category.
+     */
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['category'] ?? false) {
+            $query->where('category', 'like', '%' . request('category') . '%');
+        }
+    }
 }

@@ -20,7 +20,7 @@
 </head>
 
 <body class="flex text-slate-800">
-  <aside class="h-screen sticky top-0 pt-14 xl:pt-20 pl-20 pr-28 bg-gradient-to-b from-gray-100 to-white">
+  <aside class="w-1/5 h-screen sticky top-0 pt-14 xl:pt-20 pl-20 pr-28 bg-gradient-to-b from-gray-100 to-white">
     <h1>
       <a class="p-1" href="/">
         <img src="{{asset('images/logo.svg')}}" alt="Skybox" />
@@ -59,9 +59,9 @@
     <p class="text-sm absolute bottom-12 text-slate-400 font-light">&copy; {{ now()->year }} Skybox Ltd.</p>
   </aside>
 
-  <div class="flex-1">
+  <div class="w-4/5">
     <header
-      class="sticky top-0 border-b border-slate-50 bg-gradient-to-l from-gray-100/90 to-white/90 text-right backdrop-blur-lg">
+      class="sticky top-0 border-b z-20 border-slate-50 bg-gradient-to-l from-gray-100/90 to-white/90 text-right backdrop-blur-lg">
       @auth
       AUTH
       @else

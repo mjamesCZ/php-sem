@@ -14,7 +14,8 @@
       {{$event->category}}, {{ \Carbon\Carbon::parse($event->time)->format('l, d/m/y')}}
     </p>
     <p class="text-slate-600 font-light truncate">
-      <a href="/venues/{{$event->venue->id}}">{{$event->venue->name}}</a>
+      <a class="hover:text-dodger-blue transition-colors"
+        href="/venues/{{$event->venue->id}}">{{$event->venue->name}}</a>
     </p>
     <p class="text-sm text-slate-400 font-light mt-3">125 are going</p>
   </div>
