@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Show homepage
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+/*
+| Event listings
+*/
+
+// Show all listings
+Route::get('/events', [EventController::class, 'index']);
