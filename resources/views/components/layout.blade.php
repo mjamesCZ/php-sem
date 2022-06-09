@@ -24,7 +24,7 @@
 
 <body class="flex text-slate-800">
   <aside class="w-1/5 h-screen sticky top-0 pt-14 xl:pt-20 pl-20 pr-28 bg-gradient-to-b from-gray-100 to-white">
-    <h1 class="w-40">
+    <h1 class="w-32">
       <a class="p-1" href="/">
         <img src="{{asset('images/logo.svg')}}" alt="Skybox" />
       </a>

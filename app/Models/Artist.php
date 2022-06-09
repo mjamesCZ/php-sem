@@ -9,6 +9,8 @@ class Artist extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     /**
      * The events this artist is performing at.
      */

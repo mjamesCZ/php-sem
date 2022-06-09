@@ -74,6 +74,21 @@ Route::get('/venues/{venue}', [VenueController::class, 'show']);
 // Show all artists
 Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
 
+// Show create artist form
+Route::get('/artists/create', [ArtistController::class, 'create']);
+
+// Store created artist
+Route::post('/artists', [ArtistController::class, 'store']);
+
+// Show edit form
+Route::get('/artists/{artist}/edit', [ArtistController::class, 'edit']);
+
+// Update artist
+Route::put('/artists/{artist}', [ArtistController::class, 'update']);
+
+// Delete artist
+Route::delete('/artists/{artist}', [ArtistController::class, 'destroy']);
+
 // Show single artist
 Route::get('/artists/{artist}', [ArtistController::class, 'show']);
 
