@@ -71,6 +71,11 @@
           <x-ri-coupon-3-line class="w-5 text-gray-600 hover:text-dodger-blue" />
         </a>
 
+        @if (auth()->user()->admin == true)
+        <a class="text-sm px-4 py-1 ml-2 bg-dodger-blue text-white hover:bg-dodger-blue-400 rounded-full transition-colors"
+          href="/admin">Admin panel</a>
+        @endif
+
         <form class="inline" method="POST" action="/logout">
           @csrf
           <button class="px-6 mr-2 text-slate-600 hover:text-dodger-blue transition-colors" type="submit">

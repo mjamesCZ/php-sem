@@ -5,14 +5,14 @@
     src="{{$entity->image ? asset($entity->image) : asset('/images/no-image.png') }}" alt="">
 
   <div class="mr-auto">
-    <a class="hover:text-dodger-blue transition-colors" href="/{{$listing}}/${{$entity->id}}">
+    <a class="hover:text-dodger-blue transition-colors" href="/{{$listing}}/{{$entity->id}}" target="_blank">
       <h4 class=" text-xl">{{$entity->name}}</h4>
     </a>
     <p class="text-sm text-slate-400 font-light">entity ID: {{$entity->id}}</p>
   </div>
 
   <div class="mr-4">
-    <a class="mr-4 px-6 py-1.5 bg-dodger-blue text-white hover:bg-dodger-blue-400 rounded-full transition-colors"
+    <a class="px-5 py-1 border-2 border-slate-100 rounded-full hover:text-dodger-blue transition-colors mr-3"
       href="/{{$listing}}/{{$entity->id}}/edit">Edit</a>
 
     <form class="inline" method="POST" action="/{{$listing}}/{{$entity->id}}">

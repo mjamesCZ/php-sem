@@ -3,7 +3,12 @@
     <h2 class="text-4xl pt-14 pb-12 pl-5">Admin panel</h2>
 
     <section class="mb-12">
-      <h3 class="text-2xl pb-6 pl-5">Events</h3>
+      <div class="flex justify-between items-center pb-6 px-5">
+        <h3 class="text-2xl">Events</h3>
+
+        <a class="px-6 py-1.5 bg-dodger-blue text-white hover:bg-dodger-blue-400 rounded-full transition-colors"
+          href="/events/create">Create new event</a>
+      </div>
 
       @unless(count($events) == 0)
 
@@ -17,7 +22,13 @@
     </section>
 
     <section class="mb-12">
-      <h3 class="text-2xl pb-6 pl-5">Venues</h3>
+      <div class="flex justify-between items-center pb-6 px-5">
+        <h3 class="text-2xl">Venues</h3>
+
+        <a class="px-6 py-1.5 bg-dodger-blue text-white hover:bg-dodger-blue-400 rounded-full transition-colors"
+          href="/venues/create">Create new venue</a>
+      </div>
+
 
       @unless(count($venues) == 0)
 
@@ -31,7 +42,12 @@
     </section>
 
     <section class="mb-12">
-      <h3 class="text-2xl pb-6 pl-5">Artists</h3>
+      <div class="flex justify-between items-center pb-6 px-5">
+        <h3 class="text-2xl">Artists</h3>
+
+        <a class="px-6 py-1.5 bg-dodger-blue text-white hover:bg-dodger-blue-400 rounded-full transition-colors"
+          href="/artists/create">Create new artist</a>
+      </div>
 
       @unless(count($artists) == 0)
 
