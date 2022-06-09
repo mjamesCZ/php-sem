@@ -52,7 +52,7 @@ class ArtistController extends Controller
 
         Artist::create($formFields);
 
-        return redirect('/')->with('alert', 'Artist created successfully!');
+        return redirect('/artists')->with('alert', 'Artist created successfully!');
     }
 
     // Update artist
@@ -79,6 +79,6 @@ class ArtistController extends Controller
     public function destroy(Artist $artist)
     {
         $artist->delete();
-        return redirect('/')->with('alert', 'Artist deleted successfully!');
+        return redirect('/admin')->with('alert', 'Artist deleted successfully!');
     }
 }

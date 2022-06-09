@@ -52,7 +52,7 @@ class VenueController extends Controller
 
         Venue::create($formFields);
 
-        return redirect('/')->with('alert', 'Venue created successfully!');
+        return redirect('/venues')->with('alert', 'Venue created successfully!');
     }
 
     // Update venue
@@ -79,6 +79,6 @@ class VenueController extends Controller
     public function destroy(Venue $venue)
     {
         $venue->delete();
-        return redirect('/')->with('alert', 'Venue deleted successfully!');
+        return redirect('/admin')->with('alert', 'Venue deleted successfully!');
     }
 }

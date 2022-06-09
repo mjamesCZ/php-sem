@@ -63,7 +63,7 @@ class EventController extends Controller
 
         $event->artists()->attach($request->artists);
 
-        return redirect('/')->with('alert', 'Event created successfully!');
+        return redirect('/events')->with('alert', 'Event created successfully!');
     }
 
     // Update event
@@ -94,6 +94,6 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
-        return redirect('/')->with('alert', 'Event deleted successfully!');
+        return redirect('/admin')->with('alert', 'Event deleted successfully!');
     }
 }

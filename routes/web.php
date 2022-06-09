@@ -39,7 +39,7 @@ Route::get('/admin', function () {
         'venues' => Venue::all(),
         'artists' => Artist::all(),
     ]);
-})->middleware('auth')->name('admin');
+})->middleware('admin')->name('admin');
 
 /*
 | Event listings
@@ -50,19 +50,19 @@ Route::get('/admin', function () {
 Route::get('/events', [EventController::class, 'index'])->name('events');
 
 // Show create event form
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->middleware('admin');
 
 // Store created event
-Route::post('/events', [EventController::class, 'store']);
+Route::post('/events', [EventController::class, 'store'])->middleware('admin');
 
 // Show edit form
-Route::get('/events/{event}/edit', [EventController::class, 'edit']);
+Route::get('/events/{event}/edit', [EventController::class, 'edit'])->middleware('admin');
 
 // Update event
-Route::put('/events/{event}', [EventController::class, 'update']);
+Route::put('/events/{event}', [EventController::class, 'update'])->middleware('admin');
 
 // Delete event
-Route::delete('/events/{event}', [EventController::class, 'destroy']);
+Route::delete('/events/{event}', [EventController::class, 'destroy'])->middleware('admin');
 
 // Show single event
 Route::get('/events/{event}', [EventController::class, 'show']);
@@ -76,19 +76,19 @@ Route::get('/events/{event}', [EventController::class, 'show']);
 Route::get('/venues', [VenueController::class, 'index'])->name('venues');
 
 // Show create venue form
-Route::get('/venues/create', [VenueController::class, 'create']);
+Route::get('/venues/create', [VenueController::class, 'create'])->middleware('admin');
 
 // Store created venue
-Route::post('/venues', [VenueController::class, 'store']);
+Route::post('/venues', [VenueController::class, 'store'])->middleware('admin');
 
 // Show edit form
-Route::get('/venues/{venue}/edit', [VenueController::class, 'edit']);
+Route::get('/venues/{venue}/edit', [VenueController::class, 'edit'])->middleware('admin');
 
 // Update venue
-Route::put('/venues/{venue}', [VenueController::class, 'update']);
+Route::put('/venues/{venue}', [VenueController::class, 'update'])->middleware('admin');
 
 // Delete venue
-Route::delete('/venues/{venue}', [VenueController::class, 'destroy']);
+Route::delete('/venues/{venue}', [VenueController::class, 'destroy'])->middleware('admin');
 
 // Show single venue
 Route::get('/venues/{venue}', [VenueController::class, 'show']);
@@ -102,19 +102,19 @@ Route::get('/venues/{venue}', [VenueController::class, 'show']);
 Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
 
 // Show create artist form
-Route::get('/artists/create', [ArtistController::class, 'create']);
+Route::get('/artists/create', [ArtistController::class, 'create'])->middleware('admin');
 
 // Store created artist
-Route::post('/artists', [ArtistController::class, 'store']);
+Route::post('/artists', [ArtistController::class, 'store'])->middleware('admin');
 
 // Show edit form
-Route::get('/artists/{artist}/edit', [ArtistController::class, 'edit']);
+Route::get('/artists/{artist}/edit', [ArtistController::class, 'edit'])->middleware('admin');
 
 // Update artist
-Route::put('/artists/{artist}', [ArtistController::class, 'update']);
+Route::put('/artists/{artist}', [ArtistController::class, 'update'])->middleware('admin');
 
 // Delete artist
-Route::delete('/artists/{artist}', [ArtistController::class, 'destroy']);
+Route::delete('/artists/{artist}', [ArtistController::class, 'destroy'])->middleware('admin');
 
 // Show single artist
 Route::get('/artists/{artist}', [ArtistController::class, 'show']);
