@@ -5,6 +5,9 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\OAuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VenueController;
+use App\Models\Artist;
+use App\Models\Event;
+use App\Models\Venue;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
@@ -28,6 +31,15 @@ if (App::environment('production')) {
 Route::get('/', function () {
     return view('index');
 })->name('home');
+
+// Show admin panel
+Route::get('/admin', function () {
+    return view('admin.index', [
+        'events' => Event::all(),
+        'venues' => Venue::all(),
+        'artists' => Artist::all(),
+    ]);
+})->middleware('auth')->name('admin');
 
 /*
 | Event listings
