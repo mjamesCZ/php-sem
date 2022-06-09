@@ -51,8 +51,17 @@ Route::get('/venues', [VenueController::class, 'index'])->name('venues');
 // Show create venue form
 Route::get('/venues/create', [VenueController::class, 'create']);
 
-// Store Listing Data
+// Store created venue
 Route::post('/venues', [VenueController::class, 'store']);
+
+// Show edit form
+Route::get('/venues/{venue}/edit', [VenueController::class, 'edit']);
+
+// Update venue
+Route::put('/venues/{venue}', [VenueController::class, 'update']);
+
+// Delete venue
+Route::delete('/venues/{venue}', [VenueController::class, 'destroy']);
 
 // Show single venue
 Route::get('/venues/{venue}', [VenueController::class, 'show']);

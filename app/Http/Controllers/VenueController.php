@@ -29,6 +29,12 @@ class VenueController extends Controller
         return view('venues.create');
     }
 
+    // Show edit form
+    public function edit(Venue $venue)
+    {
+        return view('venues.edit', ['venue' => $venue]);
+    }
+
     // Store created venue
     public function store(Request $request)
     {
@@ -46,6 +52,33 @@ class VenueController extends Controller
 
         Venue::create($formFields);
 
-        return redirect('/')->with('alert', 'Venue successfully created!');
+        return redirect('/')->with('alert', 'Venue created successfully!');
+    }
+
+    // Update venue
+    public function update(Request $request, Venue $venue)
+    {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'address' => 'required',
+            'website' => 'required',
+            'description' => 'required'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $formFields['image'] = $request->file('image')->store('images', 'public');
+        }
+
+        $venue->update($formFields);
+
+        return back()->with('alert', 'Venue updated successfully!');
+    }
+
+    // Delete venue
+    public function destroy(Venue $venue)
+    {
+        $venue->delete();
+        return redirect('/')->with('alert', 'Venue deleted successfully!');
     }
 }
