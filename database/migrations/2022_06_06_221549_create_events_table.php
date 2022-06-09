@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Venue::class)->constrained()->restrictOnDelete();
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->enum('category', ['Concerts', 'Plays', 'Exhibitions', 'Festivals', 'Movies', 'Culinary', 'Conferences', 'Sports events', 'Other']);
             $table->dateTime('time');
             $table->longText('description');

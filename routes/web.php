@@ -37,6 +37,21 @@ Route::get('/', function () {
 // Show all events
 Route::get('/events', [EventController::class, 'index'])->name('events');
 
+// Show create event form
+Route::get('/events/create', [EventController::class, 'create']);
+
+// Store created event
+Route::post('/events', [EventController::class, 'store']);
+
+// Show edit form
+Route::get('/events/{event}/edit', [EventController::class, 'edit']);
+
+// Update event
+Route::put('/events/{event}', [EventController::class, 'update']);
+
+// Delete event
+Route::delete('/events/{event}', [EventController::class, 'destroy']);
+
 // Show single event
 Route::get('/events/{event}', [EventController::class, 'show']);
 
@@ -112,6 +127,8 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 // Log user out
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
-/// GitHub OAuth routes */
+// GitHub redirect
 Route::get('/auth/redirect', [OAuthController::class, 'handleRedirect']);
+
+// GitHub callback
 Route::get('/auth/callback', [OAuthController::class, 'handleCallback']);
