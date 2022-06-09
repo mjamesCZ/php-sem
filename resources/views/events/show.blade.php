@@ -5,7 +5,7 @@
       alt="{{$event->name}}">
     <div class="absolute inset-0 bg-gradient-to-b from-[rgba(146,76,148,0.5)] to-[rgba(14,91,182,0.5)]">
       <div
-        class="container absolute bottom-8 before:content-['|'] before:absolute before:container before:-left-8 before:opacity-50 before:text-3xl">
+        class="container absolute bottom-8 before:content-['event'] before:text-xs before:uppercase before:bg-wisteria/75 before:text-white/90 before:px-3 before:py-1 before:mb-5 before:inline-flex before:rounded-full">
         <h2 class="text-4xl mb-2 drop-shadow-lg">{{$event->name}}</h2>
         <p class="drop-shadow-lg">{{ \Carbon\Carbon::parse($event->time)->format('l, d/m/y h:m')}},
           {{$event->venue->name}}</p>
