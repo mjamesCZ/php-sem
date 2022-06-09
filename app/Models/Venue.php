@@ -9,6 +9,8 @@ class Venue extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     /**
      * Get the events that take place at the venue.
      */

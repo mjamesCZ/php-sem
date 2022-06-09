@@ -62,9 +62,9 @@
         </button>
       </div>
 
-      <p class="text mt-8 text-dodger-blue hover:text-dodger-blue-400 transition-colors">
+      <p class="mt-8 text-dodger-blue hover:text-dodger-blue-400 transition-colors">
         <a class="inline-flex" href="/login">Already have an account? Log in
-          <x-ri-arrow-right-line class="w-5 ml-1.5" />
+          <x-ri-arrow-right-line class="w-5 ml-1" />
         </a>
       </p>
     </form>

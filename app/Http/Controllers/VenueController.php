@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class VenueController extends Controller
 {
-    // Show venue listings
+    // Show all listings
     public function index()
     {
         return view('venues.index', [
@@ -21,5 +21,31 @@ class VenueController extends Controller
         return view('venues.show', [
             'venue' => $venue
         ]);
+    }
+
+    // Show create form
+    public function create()
+    {
+        return view('venues.create');
+    }
+
+    // Store created venue
+    public function store(Request $request)
+    {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'address' => 'required',
+            'website' => 'required',
+            'description' => 'required'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $formFields['image'] = $request->file('image')->store('images', 'public');
+        }
+
+        Venue::create($formFields);
+
+        return redirect('/')->with('alert', 'Venue successfully created!');
     }
 }

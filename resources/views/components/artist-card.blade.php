@@ -2,8 +2,8 @@
 
 <div class="flex border-2 border-slate-50 rounded-2xl shadow-card">
   <a class="w-1/3 hover:opacity-90 transition-opacity" href="/artists/{{$artist->id}}">
-    <img class="h-full object-cover rounded-l-2xl border-r-2 border-slate-50" src="{{$artist->image}}"
-      alt="{{$artist->name}}">
+    <img class="h-full object-cover rounded-l-2xl border-r-2 border-slate-50"
+      src="{{$artist->image ? asset($artist->image) : asset('/images/no-image.png') }}" alt="{{$artist->name}}">
   </a>
 
   <div class="w-2/3 p-6">

@@ -2,8 +2,8 @@
 
 <div class="flex flex-col border-2 border-slate-50 rounded-2xl shadow-card">
   <a class="hover:opacity-90 transition-opacity" href="/events/{{$event->id}}">
-    <img class="object-cover aspect-[3/2] rounded-t-2xl border-b-2 border-slate-50" src="{{$event->image}}"
-      alt="{{$event->name}}">
+    <img class="object-cover aspect-[3/2] rounded-t-2xl border-b-2 border-slate-50"
+      src="{{$event->image ? asset($event->image) : asset('/images/no-image.png') }}" alt="{{$event->name}}">
   </a>
 
   <div class="p-6">

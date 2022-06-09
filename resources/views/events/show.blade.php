@@ -1,8 +1,11 @@
 <x-layout>
   <div class="relative text-white">
-    <img class="aspect-[3/1] object-cover" src="{{$event->image}}" alt="{{$event->name}}">
+    <img class="aspect-[3/1] object-cover w-full"
+      src="{{$event->image ? asset($event->image) : asset('/images/no-image.png') }}" alt="{{$event->name}}"
+      alt="{{$event->name}}">
     <div class="absolute inset-0 bg-gradient-to-b from-[rgba(146,76,148,0.5)] to-[rgba(14,91,182,0.5)]">
-      <div class="container absolute bottom-8">
+      <div
+        class="container absolute bottom-8 before:content-['|'] before:absolute before:container before:-left-8 before:opacity-50 before:text-3xl">
         <h2 class="text-4xl mb-2 drop-shadow-lg">{{$event->name}}</h2>
         <p class="drop-shadow-lg">{{ \Carbon\Carbon::parse($event->time)->format('l, d/m/y h:m')}},
           {{$event->venue->name}}</p>

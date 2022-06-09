@@ -48,6 +48,12 @@ Route::get('/events/{event}', [EventController::class, 'show']);
 // Show all venues
 Route::get('/venues', [VenueController::class, 'index'])->name('venues');
 
+// Show create venue form
+Route::get('/venues/create', [VenueController::class, 'create']);
+
+// Store Listing Data
+Route::post('/venues', [VenueController::class, 'store']);
+
 // Show single venue
 Route::get('/venues/{venue}', [VenueController::class, 'show']);
 

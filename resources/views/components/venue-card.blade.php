@@ -2,8 +2,8 @@
 
 <div class="flex border-2 border-slate-50 rounded-2xl shadow-card">
   <a class="w-1/3 hover:opacity-90 transition-opacity" href="/venues/{{$venue->id}}">
-    <img class="h-full object-cover rounded-l-2xl border-r-2 border-slate-50" src="{{$venue->image}}"
-      alt="{{$venue->name}}">
+    <img class="h-full object-cover rounded-l-2xl border-r-2 border-slate-50"
+      src="{{$venue->image ? asset($venue->image) : asset('/images/no-image.png') }}" alt="{{$venue->name}}">
   </a>
 
   <div class="w-2/3 p-6">
