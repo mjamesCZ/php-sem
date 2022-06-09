@@ -17,9 +17,9 @@
     @endauth
 
     <div class="flex gap-4 mt-20">
-      <x-home-card title="Explore upcoming events" subtitle="TODO" url="events" />
-      <x-home-card title="Explore hottest venues" subtitle="TODO" url="venues" />
-      <x-home-card title="Explore trending artists" subtitle="TODO" url="artists" />
+      <x-home-card title="Explore upcoming events" subtitle="Metronome Festival" url="events" />
+      <x-home-card title="Explore hottest venues" subtitle="Forum Karlín" url="venues" />
+      <x-home-card title="Explore trending artists" subtitle="Cashanova Bulhar" url="artists" />
     </div>
   </div>
 </x-layout>

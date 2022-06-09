@@ -4,7 +4,7 @@
     href="/{{$url}}">
     <p class="translate-y-3 group-hover:translate-y-0 transition-transform duration-150">{{$title}}
         <span
-            class="opacity-0 text-white group-hover:opacity-90 font-light block -translate-y-4 group-hover:translate-y-0 transition">Including
+            class="opacity-0 text-white group-hover:opacity-90 font-light block -translate-y-4 group-hover:translate-y-0 transition truncate">Like
             {{$subtitle}}</span>
     </p>
     <x-ri-arrow-right-line class="w-4" />
