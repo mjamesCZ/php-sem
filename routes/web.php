@@ -156,7 +156,7 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // GitHub redirect
-Route::get('/auth/redirect', [OAuthController::class, 'handleRedirect']);
+Route::get('/auth/redirect', [UserController::class, 'redirect']);
 
 // GitHub callback
-Route::get('/auth/callback', [OAuthController::class, 'handleCallback']);
+Route::get('/auth/callback', [UserController::class, 'callback']);
