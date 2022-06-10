@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
+    protected $guarded = ['id'];
+
     /**
      * Get the deal that this ticket is for.
      */

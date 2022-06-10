@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\DealController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\OAuthController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VenueController;
 use App\Models\Artist;
@@ -64,11 +66,19 @@ Route::put('/events/{event}', [EventController::class, 'update'])->middleware('a
 // Delete event
 Route::delete('/events/{event}', [EventController::class, 'destroy'])->middleware('admin');
 
-// Create a deal
-Route::post('/events/{event}/deal', [EventController::class, 'deal'])->middleware('admin');
-
 // Show single event
 Route::get('/events/{event}', [EventController::class, 'show']);
+
+/*
+| Deals and tickets
+|--------------------------------------------------------------------------
+*/
+
+// Create a deal
+Route::post('/deals/{event}', [DealController::class, 'store'])->middleware('admin');
+
+// Purchase a ticket to given event
+Route::post('/tickets/{deal}', [TicketController::class, 'store'])->middleware('auth');
 
 /*
 | Venue listings

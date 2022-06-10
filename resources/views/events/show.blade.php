@@ -41,15 +41,17 @@
       </div>
     </section>
 
-    <section class="py-6 pb-3" id="tickets">
-      <h3 class="text-2xl">Tickets</h3>
+    <section class="py-6" id="tickets">
+      <h3 class="text-2xl pb-3">Tickets</h3>
 
-      @if (auth()->user()->admin)
+      @auth
 
-      <div class="shadow-outline rounded-xl p-6">
+      @if (auth()->user()->admin == true)
+
+      <div class="shadow-outline rounded-xl p-6 mb-8">
         <h3 class="mb-3 text-lg">Add a new deal</h3>
 
-        <form class="flex gap-3" method="POST" action="/events/{{$event->id}}/deal" enctype="multipart/form-data">
+        <form class="flex gap-3" method="POST" action="/deals/{{$event->id}}" enctype="multipart/form-data">
           @csrf
 
           {{-- Name --}}
@@ -95,6 +97,26 @@
       </div>
 
       @endif
+
+      @unless(count($event->deals) == 0)
+
+      @foreach($event->deals as $deal)
+      <x-deal-card :deal="$deal" />
+      @endforeach
+
+      @else
+      <p>Tickets for this event are not live at the moment.</p>
+      @endunless
+
+      @else
+
+      <p class="mb-12 text-dodger-blue hover:text-dodger-blue-400 transition-colors">
+        <a class="inline-flex" href="/login">You need to be logged in to buy tickets
+          <x-ri-arrow-right-line class="w-5 ml-1" />
+        </a>
+      </p>
+
+      @endauth
 
     </section>
   </div>
