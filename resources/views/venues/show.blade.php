@@ -18,7 +18,7 @@
       <p class="font-light text-slate-600">{{$venue->description}}</p>
 
       <h4 class="text-xl pt-4 pb-2">Website</h4>
-      <a class="font-light text-slate-600 hover:text-dodger-blue transition-colors" href="{{$venue->website}}"
+      <a class="font-light text-slate-600 hover:text-dodger-blue transition-colors" href="https://{{$venue->website}}"
         target="_blank" rel="noreferrer">{{$venue->website}}</a>
     </section>
 

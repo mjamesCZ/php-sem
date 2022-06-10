@@ -41,7 +41,7 @@
       </div>
     </section>
 
-    <section class="py-6 pb-3">
+    <section class="py-6 pb-3" id="tickets">
       <h3 class="text-2xl">Tickets</h3>
       <p>tixx</p>
     </section>

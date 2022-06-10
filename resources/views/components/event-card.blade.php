@@ -21,7 +21,7 @@
       <p class="text-sm text-slat-400 font-light mt-3">125 are going</p>
 
       <a class="text-white items-center bg-dodger-blue hover:bg-dodger-blue-400 rounded-full transition-colors p-2 scale-125 shadow-card"
-        href="/venues/{{$event->venue->id}}/#tickets">
+        href="/events/{{$event->id}}/#tickets">
         <x-ri-coupon-3-line class="w-4" />
       </a>
     </div>
