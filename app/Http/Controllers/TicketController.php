@@ -18,8 +18,10 @@ class TicketController extends Controller
         $formFields['deal_id'] = $deal->id;
         $formFields['user_id'] = auth()->user()->id;
 
+        $deal->update(['stock' => $deal->stock - $request->quantity]);
+
         Ticket::create($formFields);
 
-        return back()->with('alert', 'Ticket purchased successfully!');
+        return back()->with('alert', "Ticket purchased successfully! You've paid: " . $request->quantity * $deal->price . ' Kč');
     }
 }
