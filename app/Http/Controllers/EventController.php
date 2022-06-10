@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Deal;
 use App\Models\Event;
 use App\Models\Venue;
 use Illuminate\Http\Request;
@@ -95,5 +96,21 @@ class EventController extends Controller
     {
         $event->delete();
         return redirect('/admin')->with('alert', 'Event deleted successfully!');
+    }
+
+    // Create a deal
+    public function deal(Request $request, Event $event)
+    {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'stock' => 'required|min:1',
+            'price' => 'required',
+        ]);
+
+        $formFields['event_id'] = $event->id;
+
+        Deal::create($formFields);
+
+        return back()->with('alert', 'Deal created successfully!');
     }
 }

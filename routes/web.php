@@ -64,6 +64,9 @@ Route::put('/events/{event}', [EventController::class, 'update'])->middleware('a
 // Delete event
 Route::delete('/events/{event}', [EventController::class, 'destroy'])->middleware('admin');
 
+// Create a deal
+Route::post('/events/{event}/deal', [EventController::class, 'deal'])->middleware('admin');
+
 // Show single event
 Route::get('/events/{event}', [EventController::class, 'show']);
 

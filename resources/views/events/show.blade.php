@@ -43,7 +43,59 @@
 
     <section class="py-6 pb-3" id="tickets">
       <h3 class="text-2xl">Tickets</h3>
-      <p>tixx</p>
+
+      @if (auth()->user()->admin)
+
+      <div class="shadow-outline rounded-xl p-6">
+        <h3 class="mb-3 text-lg">Add a new deal</h3>
+
+        <form class="flex gap-3" method="POST" action="/events/{{$event->id}}/deal" enctype="multipart/form-data">
+          @csrf
+
+          {{-- Name --}}
+          <div class="w-1/2">
+            <label for="name" class="text mb-1 text-slate-600">Name</label>
+            <input type="text" class="border border-slate-200 rounded-lg px-4 py-2 font-light w-full" name="name"
+              value="{{old('name')}}" placeholder="Basic entry" />
+
+            @error('name')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+          </div>
+
+          {{-- Stock --}}
+          <div class="w-1/4">
+            <label for="stock" class="text mb-1 text-slate-600">Stock</label>
+            <input type="number" min="1" class="border border-slate-200 rounded-lg px-4 py-2 font-light" name="stock"
+              value="{{old('stock')}}" placeholder="200" />
+
+            @error('stock')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+          </div>
+
+          {{-- Price --}}
+          <div class="w-1/4">
+            <label for="price" class="text mb-1 text-slate-600">Price</label>
+            <input type="number" min="0" step="0.01" class="border border-slate-200 rounded-lg px-4 py-2 font-light"
+              name="price" value="{{old('price')}}" placeholder="399" />
+
+            @error('price')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+          </div>
+
+          <div class="my-6 text-center">
+            <button type="submit"
+              class="bg-dodger-blue hover:bg-dodger-blue-400 text-white rounded-full py-2 px-8 transition-colors">
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+
+      @endif
+
     </section>
   </div>
 </x-layout>

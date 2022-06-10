@@ -37,14 +37,8 @@ class DatabaseSeeder extends Seeder
             ]);
 
             // Seed deals
-            $deal = Deal::factory()->create([
+            Deal::factory()->create([
                 'event_id' => $event->id
-            ]);
-
-            // Seed tickets
-            DB::table('tickets')->insert([
-                'deal_id' => $deal->id,
-                'user_id' => $user->id,
             ]);
         }
     }

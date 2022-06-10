@@ -9,6 +9,8 @@ class Deal extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     /**
      * Get the event that the deal belogs to.
      */
