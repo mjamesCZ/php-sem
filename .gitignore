@@ -13,7 +13,3 @@ yarn-error.log
 /.idea
 /.vscode
 .DS_Store
-
-# Build
-/public/css
-/public/js
