@@ -74,11 +74,14 @@ Route::get('/events/{event}', [EventController::class, 'show']);
 |--------------------------------------------------------------------------
 */
 
-// Create a deal
-Route::post('/deals/{event}', [DealController::class, 'store'])->middleware('admin');
+// Show users tickets
+Route::get('/tickets', [TicketController::class, 'index'])->middleware('auth');
 
 // Purchase a ticket to given event
 Route::post('/tickets/{deal}', [TicketController::class, 'store'])->middleware('auth');
+
+// Create a deal
+Route::post('/deals/{event}', [DealController::class, 'store'])->middleware('admin');
 
 /*
 | Venue listings
